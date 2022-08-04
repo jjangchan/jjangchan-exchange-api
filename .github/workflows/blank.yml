@@ -27,3 +27,7 @@ jobs:
           make
           cd unittest/
           ./unittest 
+      
+      - name: Run...
+        run: |
+          ls
