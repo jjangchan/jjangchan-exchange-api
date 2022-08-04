@@ -20,4 +20,16 @@ jobs:
           brew install cmake boost openssl ninja curl
           brew install cpprestsdk
           pwd
+      
+      - name: Run CMake
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+      
+      - name: Run Source
+        run: |
+          ./example_test
+
 
