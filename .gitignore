@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+*.DS_Store
+Algorithm
+CMakeCache.*
+CMakeFiles/*
+Makefile
+*.cbp
+cmake-build-release/*
+cmake-build-debug/*
+cmake_install.cmake
+.idea/*
