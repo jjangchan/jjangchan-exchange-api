@@ -17,8 +17,7 @@ jobs:
       - name: Install dependencies
         run: | 
           brew update
-          brew install cmake boost openssl ninja curl
-          brew install cpprestsdk
+          brew install cmake 
       
       - name: Run CMake and Run Server and Test
         run: |
@@ -26,8 +25,3 @@ jobs:
           cd build/
           cmake ..
           make
-          ./qraft_exchange_api
-          curl -X GET localhost:8090/api/range/0/1000000
-          curl -X GET localhost:8090/api/list
-          curl -X GET localhost:8090/api/check
-          curl -X GET localhost:8090/api/total/aaaa
