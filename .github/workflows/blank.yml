@@ -17,6 +17,16 @@ jobs:
       - name: Install dependencies
         run: | 
           brew update
-          brew install cmake boost openssl ninja
+          brew install cmake boost openssl ninja curl
           brew install cpprestsdk
+      - name: Search directory
+        run: |
+          cd /usr/local/opt/cpprestsdk/include/
+          ls
+          cd /usr/local/opt/cpprestsdk/lib/
+          ls
+          cd /usr/local/opt/openssl/lib/
+          ls
+          cd /usr/local/opt/openssl/include/
+          ls
 
