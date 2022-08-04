@@ -20,11 +20,14 @@ jobs:
           brew install cmake boost openssl ninja curl
           brew install cpprestsdk
       
-      - name: Run CMake
+      - name: Run CMake and Run Server and Test
         run: |
           mkdir build
           cd build/
           cmake ..
           make
-          ls
-          ./example_test
+          ./qraft_exchange_api
+          curl -X GET localhost:8090/api/range/0/1000000
+          curl -X GET localhost:8090/api/list
+          curl -X GET localhost:8090/api/check
+          curl -X GET localhost:8090/api/total/aaaa
