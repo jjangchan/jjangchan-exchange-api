@@ -24,5 +24,4 @@ public:
 };
 
 TEST_F(GetPathTest, PathTest) {
-    assert(0);
 }
