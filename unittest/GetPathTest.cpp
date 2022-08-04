@@ -24,4 +24,5 @@ public:
 };
 
 TEST_F(GetPathTest, PathTest) {
+    ASSERT_EQ(1,3);
 }
