@@ -17,19 +17,17 @@ jobs:
       - name: Install dependencies
         run: | 
           brew update
-          brew install cmake 
+      #    brew install cmake 
       
-      - name: Run CMake and Run Server and Test
-        env: 
-          TEST1: ${{ screts.DOCKER_HUB_USERNAME }} 
-        run: |
-          echo TEST1
-          mkdir build
-          cd build/
-          cmake ..
-          make
-          cd unittest/
-          ./unittest 
+      #- name: Run CMake and Run Server and Test
+      #  run: |
+      #    echo TEST
+      #    mkdir build
+      #    cd build/
+      #    cmake ..
+      #    make
+      #    cd unittest/
+      #    ./unittest 
       
       - name: Docker meta 
         id: docker_meta
