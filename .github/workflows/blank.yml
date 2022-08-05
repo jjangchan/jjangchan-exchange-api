@@ -34,8 +34,10 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-           images: jjangchan/axe-test-web-server
-           tag-semver: ${{github.sha}}
+           images: jjangchan/axe-test-web-server:${{github.sha}}
+           tag-semver: |
+             {{version}}
+             {{major}}.{{minor}}
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
