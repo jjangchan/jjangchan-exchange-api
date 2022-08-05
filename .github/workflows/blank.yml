@@ -9,14 +9,14 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Install dependencies
         run: | 
-           echo test
+           sudo apt-get update
       #    echo ${{ secrets.DOCKER_HUB_USERNAME }} 
       #    brew install cmake 
       
