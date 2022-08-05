@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: | 
-           sudo apt-get update
+           echo ${{github.sha}}
       #    echo ${{ secrets.DOCKER_HUB_USERNAME }} 
       #    brew install cmake 
       
