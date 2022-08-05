@@ -9,15 +9,15 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: macos-12
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Install dependencies
         run: | 
-          brew update
-          echo ${{ secrets.DOCKER_HUB_USERNAME }} 
+          apt-get update
+      #    echo ${{ secrets.DOCKER_HUB_USERNAME }} 
       #    brew install cmake 
       
       #- name: Run CMake and Run Server and Test
