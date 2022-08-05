@@ -21,9 +21,9 @@ jobs:
       
       - name: Run CMake and Run Server and Test
         env: 
-          TEST: ${{ screts.DOCKER_HUB_USERNAME }} 
+          TEST1: ${{ screts.DOCKER_HUB_USERNAME }} 
         run: |
-          echo TEST
+          echo TEST1
           mkdir build
           cd build/
           cmake ..
