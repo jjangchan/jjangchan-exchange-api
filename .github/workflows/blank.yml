@@ -18,10 +18,12 @@ jobs:
         run: | 
           brew update
           brew install cmake 
-          echo ${{ screts.DOCKER_HUB_USERNAME }}
       
       - name: Run CMake and Run Server and Test
+        env: 
+          TEST: ${{ screts.DOCKER_HUB_USERNAME }} 
         run: |
+          echo TEST
           mkdir build
           cd build/
           cmake ..
