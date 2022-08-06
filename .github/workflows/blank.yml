@@ -17,10 +17,8 @@ jobs:
       - name: Install dependencies
         run: | 
            echo ${{ github.workspace }}
-           docker run -i --name test-ubuntu ubuntu:20.04 /bin/bash
-           ls
-           exit
-           echo ${{ github.workspace }} 
+           docker pull ubuntu:20.04
+       
           
 
  
