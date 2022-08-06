@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: | 
-           ls 
+           pwd
       #    echo ${{ secrets.DOCKER_HUB_USERNAME }} 
       #    brew install cmake 
       
