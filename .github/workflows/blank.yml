@@ -14,17 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-        
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
       - name: Install dependencies
         run: | 
            echo ${{ github.workspace }}
            docker pull ubuntu:20.04
-           docker run -rm -i --name test-ubuntu ubuntu:20.04 /bin/bash
+           sudo apt install docker-ce
+           docker run -it --name test-ubuntu ubuntu:20.04 /bin/bash
            ls
           
 
