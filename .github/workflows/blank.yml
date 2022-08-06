@@ -23,7 +23,9 @@ jobs:
            docker cp ${{ github.workspace }}/. test-ubuntu:/data/
            docker exec -i test-ubuntu /bin/bash
            cd data
-           ls
+           mkdir build
+           cd build
+           cmake ..
            exit
            docker stop test-ubuntu 
           
