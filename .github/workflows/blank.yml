@@ -34,7 +34,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-           images: jjangchan/axe-test-web-server:${{github.sha}}
+           images: jjangchan/axe-test-web-server
            tag-semver: |
              {{version}}
              {{major}}.{{minor}}
@@ -52,5 +52,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ steps.docker_meta.outputs.tags }}
+          tags: ${{ github.sha }}
           labels: ${{ steps.docker_meta.outputs.labels }}
