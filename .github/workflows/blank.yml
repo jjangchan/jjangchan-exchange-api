@@ -25,6 +25,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Pull BaseImage 
+        run: | 
+          docker pull jjangchan/cpp-tool:latest
+          docker images
 
       - name: Docker meta 
         id: docker_meta

@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+FROM jjangchan/cpp-tool:latest
 
 COPY ./ ./source/
+
 
