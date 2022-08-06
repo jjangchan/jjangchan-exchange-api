@@ -36,7 +36,7 @@ jobs:
         with:
            images: jjangchan/axe-test-web-server
            tags: | 
-              type=raw,value=${{github.sha}}
+              type=raw,value=${{github.sha}},enable=true
 
 
       - name: Login to DockerHub
