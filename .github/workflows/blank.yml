@@ -18,7 +18,7 @@ jobs:
         run: | 
            echo ${{ github.workspace }}
            docker pull ubuntu:20.04
-           sudo apt install docker-ce
+           sudo apt install docker-ce-cli
            docker run -it --name test-ubuntu ubuntu:20.04 /bin/bash
            ls
           
