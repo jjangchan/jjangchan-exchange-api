@@ -14,11 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: | 
-           mkdir build
-      #    echo ${{ secrets.DOCKER_HUB_USERNAME }} 
-      #    brew install cmake 
       
       #- name: Run CMake and Run Server and Test
       #  run: |
@@ -44,12 +39,18 @@ jobs:
            tags: | 
               type=raw,value=${{github.sha}},enable=true
 
-
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Install dependencies
+        run: | 
+           mkdir build
+           docker images
+      #    echo ${{ secrets.DOCKER_HUB_USERNAME }} 
+      #    brew install cmake 
       
       - name: Build and push
         uses: docker/build-push-action@v3
