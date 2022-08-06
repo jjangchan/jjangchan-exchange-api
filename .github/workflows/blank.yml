@@ -16,6 +16,9 @@ jobs:
 
       - name: Install dependencies
         run: | 
+           docker run -it --name test-ubuntu ubuntu:20.04 /bin/bash
+           pwd
+           exit
            pwd
       #    echo ${{ secrets.DOCKER_HUB_USERNAME }} 
       #    brew install cmake 
