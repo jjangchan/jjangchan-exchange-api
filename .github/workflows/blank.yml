@@ -17,7 +17,8 @@ jobs:
       - name: Install dependencies
         run: | 
           echo hi
-          
+
+  Docker:
     name: Docker
     runs-on: ubuntu-20.04
 
