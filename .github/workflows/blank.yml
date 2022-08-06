@@ -9,6 +9,17 @@ on:
 jobs:
   build:
     name: Build
+    runs-on: macos-12
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: | 
+          echo hi
+
+  build:
+    name: Docker
     runs-on: ubuntu-20.04
 
     steps:
@@ -16,11 +27,9 @@ jobs:
 
       - name: Install dependencies
         run: | 
-           echo ${{ github.workspace }}
-           docker pull ubuntu:20.04
-           sudo apt install docker-ce-cli
-           docker run -it --name test-ubuntu ubuntu:20.04 /bin/bash
-           ls
+          echo hi
+    
+
           
 
  
