@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: | 
-          echo hi
+          echo install...
 
   Docker:
     name: Docker
@@ -26,9 +26,29 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: | 
-          echo hi
+      - name: Docker meta 
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v2
+        with:
+           images: jjangchan/axe-test-web-server
+           tags: | 
+              type=raw,value=${{github.sha}},enable=true
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
     
 
           
