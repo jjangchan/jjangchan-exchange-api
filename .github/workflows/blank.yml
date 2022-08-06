@@ -17,11 +17,11 @@ jobs:
       - name: Install dependencies
         run: | 
            echo ${{ github.workspace }}
-           docker run -it --name test-ubuntu ubuntu:20.04 /bin/bash
+           docker run -i --name test-ubuntu ubuntu:20.04 /bin/bash
            exit
            docker start test-ubuntu 
            docker cp ${{ github.workspace }}/. test-ubuntu:/data/
-           docker exec -it test-ubuntu /bin/bash
+           docker exec -i test-ubuntu /bin/bash
            cd data
            ls
            exit
