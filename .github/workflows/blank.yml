@@ -16,7 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: | 
-           mkdir build
+           ls 
       #    echo ${{ secrets.DOCKER_HUB_USERNAME }} 
       #    brew install cmake 
       
@@ -30,12 +30,6 @@ jobs:
       #    cd unittest/
       #    ./unittest 
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      
       - name: Docker meta 
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v2
