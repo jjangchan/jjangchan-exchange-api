@@ -18,7 +18,7 @@ jobs:
         run: | 
            echo ${{ github.workspace }}
            docker pull ubuntu:20.04
-           docker run -i -t --name test-ubuntu ubuntu:20.04 /bin/bash
+           docker run -t --name test-ubuntu ubuntu:20.04 /bin/bash
            docker ps
           
 
